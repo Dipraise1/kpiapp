@@ -1,62 +1,52 @@
-# KPI Dashboard - React Native App
+# 📊 KPI Dashboard App
 
-A subscription-based KPI dashboard mobile application that allows users to import Excel data and track key performance indicators with beautiful charts and analytics.
+A comprehensive React Native mobile application for tracking and visualizing Key Performance Indicators (KPIs) with subscription-based features.
 
-## Features
+## ✨ Features
 
-### Free Plan
-- Import Excel files
-- Track up to 3 KPIs
-- Basic charts
-- 1 data source
+### 🔐 Authentication
+- User login and registration
+- Secure authentication flow
+- Demo credentials for testing
 
-### Premium Plan ($9.99/month)
-- Advanced KPI tracking (up to 20 KPIs)
-- Multiple data sources (up to 5)
-- Advanced charts and analytics
-- Data export functionality
+### 📈 KPI Management
+- **6 Sample KPIs** with real-time data
+- Interactive KPI cards with trend indicators
+- Target tracking with progress bars
+- Historical data analysis
+- Performance summaries and statistics
 
-### Enterprise Plan ($29.99/month)
-- Unlimited KPIs and data sources
-- All chart types
-- Priority support
-- Advanced analytics
+### 💰 Subscription Tiers
+- **Free Plan**: 3 KPIs, 1 data source
+- **Premium Plan**: 20 KPIs, 5 data sources ($9.99/month)
+- **Enterprise Plan**: Unlimited KPIs and data sources ($29.99/month)
 
-## Core Features
+### 📊 Data Sources
+- Excel file import simulation
+- Multiple data source management
+- Real-time data updates
+- Data source analytics
 
-- **Excel Import**: Upload and process Excel files to automatically generate KPIs
-- **Real-time Dashboard**: Beautiful dashboard with KPI cards and trend indicators
-- **Interactive Charts**: Line charts, bar charts, and trend visualizations
-- **Subscription Management**: Built-in subscription system with different tiers
-- **Biometric Authentication**: Touch ID/Face ID support for secure access
-- **Data Export**: Export your KPI data (Premium feature)
-- **Responsive Design**: Optimized for both iOS and Android
+### 🎨 Modern UI/UX
+- Material Design components
+- Beautiful charts and visualizations
+- Responsive design
+- Dark/Light theme support
 
-## Technology Stack
-
-- **Frontend**: React Native with Expo
-- **UI Components**: React Native Paper
-- **Charts**: React Native Chart Kit
-- **Navigation**: React Navigation
-- **Authentication**: Expo Local Authentication
-- **Data Storage**: Expo Secure Store + AsyncStorage
-- **Excel Processing**: SheetJS (xlsx)
-- **Icons**: Expo Vector Icons
-
-## Installation
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 16+ 
+- Node.js (v18 or higher)
+- npm or yarn
 - Expo CLI
-- iOS Simulator or Android Emulator (for development)
+- Expo Go app on your mobile device
 
-### Setup
+### Installation
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd kpi-dashboard-app
+git clone https://github.com/Dipraise1/kpiapp.git
+cd kpiapp
 ```
 
 2. **Install dependencies**
@@ -66,130 +56,137 @@ npm install
 
 3. **Start the development server**
 ```bash
-npm start
+npx expo start
 ```
 
-4. **Run on device/simulator**
-```bash
-# For iOS
-npm run ios
+4. **Run on your device**
+- Scan the QR code with Expo Go (Android) or Camera app (iOS)
 
-# For Android
-npm run android
+### Demo Login
+- **Email**: `demo@example.com`
+- **Password**: `password`
 
-# For web
-npm run web
-```
-
-## Usage
-
-### Getting Started
-
-1. **Login/Register**: Create an account or login with existing credentials
-2. **Import Data**: Use the FAB (floating action button) to import Excel files
-3. **View KPIs**: Browse your generated KPIs on the dashboard
-4. **Explore Details**: Tap on any KPI to view detailed information and charts
-5. **Manage Subscription**: Visit the subscription tab to upgrade your plan
-
-### Excel File Format
-
-The app automatically detects numeric columns in your Excel files and generates KPIs. For best results:
-
-- Use clear column headers
-- Ensure numeric data is properly formatted
-- Include multiple rows for trend analysis
-
-## Project Structure
+## 📱 App Structure
 
 ```
 src/
-├── contexts/          # React contexts for state management
+├── contexts/           # React contexts for state management
 │   ├── AuthContext.tsx
-│   ├── SubscriptionContext.tsx
-│   └── DataContext.tsx
-├── navigation/        # Navigation setup
+│   ├── DataContext.tsx
+│   └── SubscriptionContext.tsx
+├── navigation/         # Navigation configuration
 │   └── AppNavigator.tsx
-├── screens/          # Screen components
-│   ├── auth/         # Authentication screens
-│   │   ├── LoginScreen.tsx
-│   │   └── RegisterScreen.tsx
-│   └── main/         # Main app screens
-│       ├── DashboardScreen.tsx
-│       ├── KPIDetailScreen.tsx
-│       ├── DataSourceScreen.tsx
-│       ├── SubscriptionScreen.tsx
-│       └── SettingsScreen.tsx
-└── theme/            # Theme configuration
-    └── theme.ts
+├── screens/           # All app screens
+│   ├── auth/          # Login and registration
+│   └── main/          # Main app screens
+├── theme/             # Theme configuration
+└── components/        # Reusable components
 ```
 
-## Key Components
+## 🔧 Key Features Walkthrough
 
-### Authentication System
-- Secure login/registration
-- Biometric authentication support
-- Session management with Expo Secure Store
+### Dashboard Screen
+- Overview of all accessible KPIs
+- Real-time data updates (every 30 seconds)
+- Performance summary statistics
+- Subscription limits visualization
 
-### Data Management
-- Excel file parsing with SheetJS
-- Automatic KPI generation
-- Local data storage with AsyncStorage
-- Data refresh and synchronization
+### KPI Detail Screen
+- Comprehensive KPI analysis
+- Target performance tracking
+- Historical data insights
+- 7-day change analysis
 
-### Subscription System
-- Three-tier subscription model
-- Feature gating based on plan
-- Mock subscription management (ready for real payment integration)
+### Data Sources Screen
+- Manage Excel file imports
+- View data source statistics
+- Add/remove data sources
+- Subscription limit management
 
-### Charts & Analytics
-- Interactive line charts
-- Trend indicators
-- Historical data visualization
-- Responsive chart sizing
+### Subscription Screen
+- Compare subscription plans
+- View current plan details
+- Upgrade/downgrade options
 
-## Development
+## 🏗️ Building APK
 
-### Adding New Features
+### Using EAS Build (Recommended)
 
-1. **New KPI Types**: Extend the `KPIData` interface in `DataContext.tsx`
-2. **Chart Types**: Add new chart components in screen files
-3. **Subscription Features**: Update feature flags in `SubscriptionContext.tsx`
-4. **New Screens**: Add to navigation in `AppNavigator.tsx`
-
-### Testing
-
+1. **Configure EAS**
 ```bash
-# Run tests (when implemented)
-npm test
-
-# Type checking
-npx tsc --noEmit
+npx eas-cli configure
 ```
 
-## Building for Production
-
-### iOS
+2. **Build APK**
 ```bash
-expo build:ios
+npx eas-cli build --platform android --profile preview
 ```
 
-### Android
+### Alternative: Local Build
 ```bash
-expo build:android
+npx expo build:android
 ```
 
-## License
+## 🧪 Testing
 
-MIT License - see LICENSE file for details
+The app includes comprehensive functionality:
 
-## Support
+- **Real-time Data**: KPIs update automatically every 30 seconds
+- **Interactive Features**: Pull-to-refresh, navigation, alerts
+- **Subscription Logic**: Features are locked/unlocked based on plan
+- **Data Management**: Add/remove data sources and KPIs
 
-For support, email support@kpidashboard.com or visit our help center.
+## 🛠️ Tech Stack
 
-## Contributing
+- **Framework**: React Native with Expo
+- **UI Library**: React Native Paper (Material Design)
+- **Navigation**: React Navigation v6
+- **State Management**: React Context API
+- **Language**: TypeScript
+- **Icons**: Material Icons
+
+## 📊 Sample KPIs Included
+
+1. **Monthly Revenue** - $125,000 (Target: $130,000)
+2. **Active Users** - 2,850 (Target: 3,000)
+3. **Conversion Rate** - 3.2% (Target: 3.5%)
+4. **Customer Satisfaction** - 4.3/5 (Target: 4.5/5)
+5. **Support Tickets** - 142 (Target: 120)
+6. **Website Traffic** - 15,420 visits (Target: 16,000)
+
+## 🔄 Real-time Features
+
+- **Auto-refresh**: Data updates every 30 seconds
+- **Pull-to-refresh**: Manual data refresh
+- **Live trends**: Trend indicators update with data
+- **Progress tracking**: Target progress updates in real-time
+
+## 🎯 Future Enhancements
+
+- [ ] Excel file parsing integration
+- [ ] Push notifications for KPI alerts
+- [ ] Advanced analytics and reporting
+- [ ] Custom KPI creation
+- [ ] Data export functionality
+- [ ] Social sharing features
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 👥 Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request # kpiapp
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📞 Support
+
+For support and questions:
+- Create an issue on GitHub
+- Email: support@kpidashboard.com
+
+---
+
+**Made with ❤️ using React Native and Expo**
